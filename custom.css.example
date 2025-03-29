@@ -1,0 +1,109 @@
+/* 
+   LlamaSesame Custom CSS Example
+   
+   This file demonstrates how to customize the LlamaSesame web interface.
+   To use these styles, rename this file to 'custom.css' in the application directory.
+*/
+
+/* ===== Application-wide styles ===== */
+
+/* Main heading */
+h1 {
+    color: #3f51b5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 2px solid #3f51b5;
+    padding-bottom: 10px;
+}
+
+/* Secondary headings */
+h2 {
+    color: #1a237e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-left: 3px solid #3f51b5;
+    padding-left: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #3f51b5 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+}
+
+button:hover {
+    background-color: #1a237e !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ===== Voice Cloning tab styles ===== */
+
+/* Make the voice cloning tab stand out */
+[data-testid="stTabs"] > [data-baseweb="tab-list"] > div:first-child {
+    color: #3f51b5 !important;
+    font-weight: bold !important;
+}
+
+/* Audio player styling */
+audio {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+/* Quality slider */
+[data-testid="stSlider"] > div {
+    background-color: rgba(63, 81, 181, 0.2) !important;
+}
+
+/* ===== History tab styles ===== */
+
+/* Make history entries more distinct */
+[data-baseweb="accordion"] > div {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+[data-baseweb="accordion"] > div:hover {
+    background-color: #e8eaf6;
+}
+
+/* ===== Batch Processing tab styles ===== */
+
+/* Status indicator */
+[data-testid="stMarkdown"] span[style*="color:#4CAF50"] {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+[data-testid="stMarkdown"] span[style*="color:#9E9E9E"] {
+    background-color: rgba(158, 158, 158, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* ===== Settings tab styles ===== */
+
+/* Make the settings tab easier to read */
+[data-testid="stRadio"] > div {
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+/* ===== Footer styles ===== */
+
+/* Add custom footer (using ::after) */
+body::after {
+    content: "LlamaSesame Voice Cloning Studio Pro";
+    display: block;
+    text-align: center;
+    color: #3f51b5;
+    font-size: 0.8em;
+    margin-top: 50px;
+    opacity: 0.7;
+} 
