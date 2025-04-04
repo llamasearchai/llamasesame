@@ -2,7 +2,7 @@
 
 A state-of-the-art voice cloning platform using advanced AI technologies.
 
-![LlamaSesame Logo](https://llamasearch.ai/llamasesame-logo.png)
+![LlamaSesame Logo](https://llamasearch.ai
 
 ## 🌟 Features
 
@@ -31,7 +31,7 @@ pip install llamasesame
 ### From source
 
 ```bash
-git clone https://github.com/llamasearch/llamasesame.git
+git clone https://llamasearch.ai
 cd llamasesame
 pip install -e .
 ```

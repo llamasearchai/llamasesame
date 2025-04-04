@@ -17,14 +17,14 @@ if os.path.exists("README.md"):
         long_description = f.read()
 
 setup(
-    name="llamasesame",
+    name="llamasesame-llamasearch",
     version="1.0.0",
     description="LlamaSesame Voice Cloning Studio Pro",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="LlamaSearch",
-    author_email="info@llamasearch.ai",
-    url="https://github.com/llamasearch/llamasesame",
+    author="LlamaSearch AI",
+    author_email="nikjois@llamasearch.ai",
+    url="https://llamasearch.ai",
     packages=find_packages(),
     include_package_data=True,
     install_requires=requirements,
@@ -47,4 +47,6 @@ setup(
             "llamasesame=llamasesame.llamasesame:main",
         ],
     },
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
 ) 
