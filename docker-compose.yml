@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  llamasesame:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: llamasearch/llamasesame:latest
+    container_name: llamasesame
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - voice_clone_output:/root/VoiceCloneOutput
+      - model_cache:/root/.voice_cloning_cache
+      - huggingface_cache:/app/.cache/huggingface
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - llamasesame_network
+
+volumes:
+  voice_clone_output:
+    name: llamasesame_voice_clone_output
+  model_cache:
+    name: llamasesame_model_cache
+  huggingface_cache:
+    name: llamasesame_huggingface_cache
+
+networks:
+  llamasesame_network:
+    name: llamasesame_network 
